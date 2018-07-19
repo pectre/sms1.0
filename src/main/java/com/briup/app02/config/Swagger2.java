@@ -45,7 +45,7 @@ public class Swagger2 {
 	
 	private ApiInfo apiInfo() {
 		return new ApiInfoBuilder()
-				.title("周振国")
+				.title("智慧校园，课调系统API")
 				.description("昆山杰普软件科技有限公司，http://www.briup.com")
 				.termsOfServiceUrl("http://www.briup.com")
 				.version("1.0")
