@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.briup.app02.dao.extend.ClazzVMMapper">
+  <select id="findAllClazzVM"  resultMap="ClazzVMResultMap1">
+  	select * from poll_clazz
+  </select>
+  <resultMap type="com.briup.app02.vm.ClazzVM" id="ClazzVMResultMap1">
+	<id column="id" property="id"/>
+  	<result column="name" property="name"/>
+  	<result column="description" property="description"/> 
+  	<association column="grade_id" property="grade" select="com.briup.app02.dao.GradeMapper.findById"></association>
+  	<association column="user_id" property="user" select="com.briup.app02.dao.UserMapper.findById"></association>  	
+  </resultMap>
+  
+  <select id="findClazzVMById"  resultMap="ClazzVMResultMap2">
+  	select * from poll_clazz where id=#{id}
+  </select>
+  <resultMap type="com.briup.app02.vm.ClazzVM" id="ClazzVMResultMap2">
+	<id column="id" property="id"/>
+  	<result column="name" property="name"/>
+  	<result column="description" property="description"/> 
+  	<association column="grade_id" property="grade" select="com.briup.app02.dao.GradeMapper.findById"></association>
+  	<association column="user_id" property="user" select="com.briup.app02.dao.UserMapper.findById"></association>  	
+  </resultMap>
+</mapper>
