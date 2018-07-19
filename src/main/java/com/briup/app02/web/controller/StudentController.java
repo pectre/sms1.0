@@ -10,11 +10,17 @@ import com.briup.app02.bean.Student;
 import com.briup.app02.service.IStudentService;
 import com.briup.app02.util.MsgResponse;
 
+import io.swagger.annotations.Api;
+import springfox.documentation.annotations.ApiIgnore;
+
+@ApiIgnore
+@Api(description="学生管理系统")
 @RestController
 @RequestMapping("/student")
 public class StudentController {
 	@Autowired
 	private IStudentService studentService;
+	
 	
 	@GetMapping("findAllStudent")
 	public MsgResponse findAllStudent() {

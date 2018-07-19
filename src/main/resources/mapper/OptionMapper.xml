@@ -6,8 +6,8 @@
   <select id="findAll" resultType="com.briup.app02.bean.Option">
     select * from poll_option
   </select>
-  <select id="findById" parameterType="long" resultType="com.briup.app02.bean.Option">
-    select * from poll_option where id=#{id}
+  <select id="findByQuestionId" parameterType="long" resultType="com.briup.app02.bean.Option">
+    select * from poll_option where question_id=#{id}
   </select>
   <update id="updateById" parameterType="com.briup.app02.bean.Option">
     update poll_option 

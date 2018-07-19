@@ -5,6 +5,13 @@ public class Question {
 	private String name;
 	private String questiontype;
 	
+	public Question(long id, String name, String questiontype) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.questiontype = questiontype;
+	}
+	
 	public long getId() {
 		return id;
 	}

@@ -16,11 +16,11 @@ public class ClazzController {
 	@Autowired
 	private IClazzService clazzService;
 	
-	@GetMapping("findAllClazz")
-	public MsgResponse findAllClazz() {
+	@GetMapping("findAllClazzvm")
+	public MsgResponse findAllClazzvm() {
 		
 		try {
-			return MsgResponse.success("查找成功",clazzService.findAll());
+			return MsgResponse.success("查找成功",clazzService.findAllClazzVM());
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

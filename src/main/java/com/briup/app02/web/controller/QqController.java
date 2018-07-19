@@ -16,6 +16,17 @@ public class QqController {
 	@Autowired
 	private IQqService qqService;
 	
+	@GetMapping("findAllQqVM")
+	public MsgResponse findAllQqVM() {
+		try {
+			return MsgResponse.success("查找成功",qqService.findAllQqVM());
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return MsgResponse.error(e.getMessage());
+		}
+	}
+	
 	@GetMapping("findAllQq")
 	public MsgResponse findAllQq() {
 		

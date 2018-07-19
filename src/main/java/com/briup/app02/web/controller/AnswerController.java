@@ -16,6 +16,18 @@ public class AnswerController {
 	@Autowired
 	private IAnswerService answerService;
 	
+	@GetMapping("findAllAnswerVM")
+	public MsgResponse findAllAnswerVM() {
+		
+		try {
+			return MsgResponse.success("查找成功",answerService);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return MsgResponse.error(e.getMessage());
+		}
+	}
+	
 	@GetMapping("findAllAnswer")
 	public MsgResponse findAllAnswer() {
 		

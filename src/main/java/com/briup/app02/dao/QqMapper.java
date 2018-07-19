@@ -5,6 +5,7 @@ import java.util.List;
 import com.briup.app02.bean.Qq;
 
 public interface QqMapper {
+	
 	List<Qq> findAll();
 	
 	Qq findById(long id);

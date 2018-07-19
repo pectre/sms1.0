@@ -16,6 +16,18 @@ public class SurveyController {
 	@Autowired
 	private ISurveyService surveyService;
 	
+	@GetMapping("findAllSurveyVM")
+	public MsgResponse findAllSurveyVM() {
+		
+		try {
+			return MsgResponse.success("查找成功",surveyService.findAllSurveyVM());
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return MsgResponse.error(e.getMessage());
+		}
+	}
+	
 	@GetMapping("findAllSurvey")
 	public MsgResponse findAllSurvey() {
 		

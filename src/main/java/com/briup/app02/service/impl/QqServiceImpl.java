@@ -8,12 +8,16 @@ import org.springframework.stereotype.Service;
 import com.briup.app02.bean.Qq;
 import com.briup.app02.dao.QqMapper;
 import com.briup.app02.service.IQqService;
+import com.briup.app02.vm.QqVM;
 
 @Service
 public class QqServiceImpl implements IQqService {
 	
 	@Autowired
 	private QqMapper qqMapper;
+	
+	@Autowired
+	private com.briup.app02.dao.extend.QqVMMapper QqVMMapper;
 	
 	@Override
 	public List<Qq> findAll() throws Exception {
@@ -45,5 +49,11 @@ public class QqServiceImpl implements IQqService {
 	public void save(Qq qq) throws Exception {
 		
 		qqMapper.save(qq);
+	}
+
+	@Override
+	public List<QqVM> findAllQqVM() throws Exception {
+		List<QqVM> list=QqVMMapper.findAllQqVM();
+		return list;
 	}
 }

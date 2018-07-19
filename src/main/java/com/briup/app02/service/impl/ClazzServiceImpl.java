@@ -7,26 +7,30 @@ import org.springframework.stereotype.Service;
 
 import com.briup.app02.bean.Clazz;
 import com.briup.app02.dao.ClazzMapper;
+import com.briup.app02.dao.extend.ClazzVMMapper;
 import com.briup.app02.service.IClazzService;
+import com.briup.app02.vm.ClazzVM;
 
 @Service
 public class ClazzServiceImpl implements IClazzService {
 	
 	@Autowired
 	private ClazzMapper clazzMapper;
+	@Autowired
+	private ClazzVMMapper clazzVMMapper;
 	
 	@Override
-	public List<Clazz> findAll() throws Exception {
+	public List<ClazzVM> findAllClazzVM() throws Exception {
 		
-		List<Clazz> list=clazzMapper.findAll();
+		List<ClazzVM> list=clazzVMMapper.findAllClazzVM();
 		
 		return list;
 	}
 	
 	@Override
-	public Clazz findById(long id) throws Exception {
+	public ClazzVM findById(long id) throws Exception {
 		
-		 return clazzMapper.findById(id);
+		 return clazzVMMapper.findClazzVMById(id);
 	}
 	
 	@Override
